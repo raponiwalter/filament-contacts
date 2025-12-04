@@ -1,0 +1,29 @@
+{
+    "name": "wraps/filament-contacts",
+    "description": "Polimorphic Contacts RelationManager for FilamentPHP",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Wraps\\FilamentContacts\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Walter Raponi",
+            "email": "walter.raponi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "filament/filament": "^3.2|^4.0",
+        "spatie/laravel-package-tools": "^1.16"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wraps\\FilamentContacts\\FilamentContactsServiceProvider"
+            ]
+        }
+    }
+}
