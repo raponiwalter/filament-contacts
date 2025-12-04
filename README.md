@@ -32,7 +32,7 @@ composer require wraps/filament-contacts
 Publish and run the migrations:
 
 ```bash
-sail artisan filament-contacts:install
+php artisan filament-contacts:install
 ```
 
 migrations and `config/filament-contacts.php` will be published.
