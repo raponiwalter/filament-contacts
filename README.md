@@ -32,15 +32,12 @@ composer require wraps/filament-contacts
 Publish and run the migrations:
 
 ```bash
-php artisan vendor:publish --tag="filament-contacts-migrations"
-php artisan migrate
+sail artisan filament-contacts:install
 ```
 
-Optionally, you can publish the config file:
+migrations and `config/filament-contacts.php` will be published.
 
-```bash
-php artisan vendor:publish --tag="filament-contacts-config"
-```
+>If the table name "contacts" does not suits your project PLEASE update the config file before migrate
 
 ## Usage
 
