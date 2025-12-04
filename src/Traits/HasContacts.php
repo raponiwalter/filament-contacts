@@ -10,9 +10,6 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasContacts
 {
-    /**
-     * Relazione polimorfica.
-     */
     public function contacts(): MorphMany
     {
         return $this->morphMany(Contact::class, ContactColumn::MORPH_NAME);
@@ -21,12 +18,13 @@ trait HasContacts
     public function primaryContact(): MorphOne
     {
         return $this->morphOne(Contact::class, ContactColumn::MORPH_NAME)
-                    ->where('is_primary', true);
+                ->where('is_primary', true);
     }
 
     /**
-     * Metodo di configurazione.
-     * L'utente può sovrascriverlo nel suo Modello per personalizzare il comportamento.
+     * User can override this on the model
+     *
+     * @return ContactOptions
      */
     public function getFilamentContactOptions(): ContactOptions
     {
