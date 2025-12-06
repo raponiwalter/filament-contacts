@@ -31,4 +31,14 @@ enum ContactType: string implements HasLabel, HasColor
             self::Other => 'gray',
         };
     }
+
+    public function getIcon(): string
+    {
+        return match ($this) {
+            self::Work => 'heroicon-o-briefcase',
+            self::Home => 'heroicon-o-home',
+            self::Mobile => 'heroicon-o-phone',
+            self::Other => 'heroicon-o-question-mark-circle',
+        };
+    }
 }

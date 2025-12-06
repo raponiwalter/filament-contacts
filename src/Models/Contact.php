@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Wraps\FilamentContacts\Enums\ContactType;
 use Wraps\FilamentContacts\Support\ContactColumn;
 
 class Contact extends Model
@@ -17,6 +18,7 @@ class Contact extends Model
 
     protected $casts = [
         ContactColumn::IS_PRIMARY => 'boolean',
+        ContactColumn::TYPE => ContactType::class
     ];
 
     public function getTable()
