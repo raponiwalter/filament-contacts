@@ -7,7 +7,7 @@ use Wraps\FilamentContacts\Enums\ContactType;
 class ContactOptions
 {
     public bool $isSearchable = true;
-    public bool $isReadonly = false;
+    public ?bool $isReadonly = null;
     public bool $useSlideOver = false; // Default: Classic modal
 
     public array $hiddenFields = [];

@@ -30,9 +30,25 @@ class ContactsRelationManager extends RelationManager
         return __('filament-contacts::resources.contacts.title');
     }
 
-    protected function getContactOptions(): ContactOptions
+    public function getContactOptions(): ContactOptions
     {
-        return $this->getOwnerRecord()->getFilamentContactOptions();
+        $record = $this->getOwnerRecord();
+
+        if (method_exists($record, 'getFilamentContactOptions')) {
+            return $record->getFilamentContactOptions();
+        }
+        return ContactOptions::make();
+    }
+
+    public function isReadOnly(): bool
+    {
+        $options = $this->getContactOptions();
+
+        if ($options->isReadonly !== null) {
+            return $options->isReadonly;
+        }
+
+        return parent::isReadOnly();
     }
 
     public function form(Schema $schema): Schema
