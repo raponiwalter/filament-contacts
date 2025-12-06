@@ -7,7 +7,6 @@ use Wraps\FilamentContacts\Support\ContactColumn;
 use Wraps\FilamentContacts\Support\ContactOptions;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Wraps\FilamentContacts\Enums\ContactType;
 
 trait HasContacts
 {
